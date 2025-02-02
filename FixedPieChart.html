@@ -1,0 +1,26 @@
+<html>
+<head>
+<!-- Load the AJAX API -->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load('visualization', '1.0', {'packages':['corechart']});
+google.setOnLoadCallback(drawChart);
+function drawChart() {
+var data = new google.visualization.DataTable();
+data.addColumn('string', 'Label');
+data.addColumn('number', 'Value');
+data.addRows([
+['Bananas', 100],
+['Apples', 200],
+['Kumquats', 150]
+]);
+var options = {'title': 'A Pie Chart', 'width': 400, 'height': 300};
+var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+chart.draw(data, options);
+}
+</script>
+</head>
+<body>
+<div id='chart_div'></div>
+</body>
+</html>

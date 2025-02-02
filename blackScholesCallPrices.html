@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Line Chart Example</title>
+<script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+<script type='text/javascript'>
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('number', 'X');
+    data.addColumn('number', 'Y');
+    data.addRows([
+      [60, 4.48584],
+      [70, 11.1519],
+      [80, 19.8739],
+      [90, 29.4812],
+      [100, 39.378],
+      [110, 49.3537],
+      [120, 59.3483],
+      [130, 69.3472],
+      [140, 79.347]
+    ]);
+    var options = { 'title' : 'Line Chart', 'curveType' : 'function', 'legend' : {position : 'bottom'}, 'width' : 600, 'height' : 400 };
+    var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+</script>
+</head>
+<body>
+  <div id='chart_div' style='width: 600px; height: 400px;'></div>
+</body>
+</html>

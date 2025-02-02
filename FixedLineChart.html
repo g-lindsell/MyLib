@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Line Chart Example</title>
+<script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+<script type='text/javascript'>
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('number', 'X');
+    data.addColumn('number', 'Y');
+data.addRows([
+[2017, 1000],
+[2018, 1170],
+[2019, 1120],
+[2020, 540]
+]);
+    var options = { 'title' : 'Line Chart', 'curveType' : 'function', 'legend' : {position : 'bottom'}, 'width' : 600, 'height' : 400 };
+    var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+</script>
+</head>
+<body>
+  <div id='chart_div' style='width: 600px; height: 400px;'></div>
+</body>
+</html>

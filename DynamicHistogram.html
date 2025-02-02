@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Line Chart Example</title>
+<script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+<script type='text/javascript'>
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('number', 'X');
+    data.addColumn('number', 'Y');
+        var data = google.visualization.arrayToDataTable([
+['Label', 'Value'],
+        ['A', 0.933164],
+        ['B', 0.260842],
+        ['C', 0.90228],
+        ['D', 0.441786],
+        ['E', 0.919767],
+        ['F', 0.233039],
+        ['G', 0.441694],
+        ['H', 0.699576],
+        ['I', 0.785699],
+        ['J', 0.914518],
+        ['K', 0.96765],
+        ['L', 0.186254],
+        ['M', 0.806024],
+        ['N', 0.39082],
+        ['O', 0.991394],
+        ['P', 0.563707],
+        ['Q', 0.907804],
+        ['R', 0.642903],
+        ['S', 0.783563],
+        ['T', 0.879849],
+        ['U', 0.867641],
+        ['V', 0.0797754],
+        ['W', 0.400647],
+        ['X', 0.614277],
+        ['Y', 0.799921],
+        ['Z', 0.198584]
+        ]);
+        var options = {
+          title: 'Lengths of dinosaurs, in meters',
+          legend: { position: 'none' },
+        };
+        var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id='chart_div' style='width: 900px; height: 500px;'></div>
+  <body>
+  <body>
+</html>
